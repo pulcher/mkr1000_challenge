@@ -1,4 +1,4 @@
-// MKR1000 challenge entry: Say thanks to courteous drivers.
+2// MKR1000 challenge entry: Say thanks to courteous drivers.
 // Please refer to the following examples to make sure that everything works
 // and is setup correctly:
 // - Adafruit_DotStarMatrix > Matrix Test
@@ -54,7 +54,7 @@ void setup() {
     shield.begin(); //assumes 115200 Bluetooth baudrate
 
 
-      DisplayText("Initializing...finished", 3, 10);
+  DisplayText("Initializing...finished", 3, 10);
 }
 
 
@@ -71,7 +71,7 @@ void refresh(ShieldEvent* shieldEvent)
   screen.clear(ARGB(123,86,204));
   
   screen.drawAt(0,0, "");
-  //screen.drawImage(0,50, "https://blog.arduino.cc/wp-content/uploads/2015/04/windowsarduino.jpg", "", 300, 100);
+
   thanksId      = screen.addButton(10, 50,   ". Thank you .");
   welcomeId     = screen.addButton(10, 100,  ".  Welcome  .");
   turnLeftId    = screen.addButton(10, 150,  ".      Left       .");
@@ -80,8 +80,6 @@ void refresh(ShieldEvent* shieldEvent)
   turnRightId   = screen.addButton(175, 150, ".    Right     .");
   backoffId     = screen.addButton(10, 225,  ".              Back Off                 .");
   calling911Id  = screen.addButton(10, 290,  ".           Calling 911                .");
-  //rectangleId = screen.fillRectangle(0, 265, 100, 50, GREEN);
-  //screen.line(105,265,300,305, YELLOW);
 }
 
 void screenEvent(ShieldEvent* shieldEvent) 
@@ -125,12 +123,6 @@ void screenEvent(ShieldEvent* shieldEvent)
   {
     DisplayText("Calling 911", 0, 100);
   }
-  
-//  if (screen.isReleased(thanksId)) 
-//  {
-//    screen.change(buttonId, ARGB(0,255,0));
-//    screen.change(rectangleId, ARGB(0,255,0));
-//  }
 }
 
 void onSpeech(ShieldEvent* shieldEvent) {
